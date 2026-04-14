@@ -13,7 +13,7 @@ A start-to-finish outline of a popular open-source help desk ticketing system.
 - [PHP 7.3.8](https://www.php.net/): Scripting Language
 - [MySQL 5.5.62](https://www.mysql.com/): Database Management
 - [HeidiSQL](https://www.heidisql.com/): Database Client
-- [osTicket](https://osticket.com/download/): Ticketing Software
+- [osTicket](https://osticket.com/): Ticketing Software
 
 <h2>Installation Steps</h2>
 
