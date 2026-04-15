@@ -30,7 +30,7 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h2>Configuration Steps</h2>
 
-[Insert an image here]
+##Insert an image here##
 
 1. Configure Roles, Departments, and Teams<br>
 Roles: Created a 'Supreme Admin' role with full permissions.<br>
@@ -46,5 +46,11 @@ SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) resp
 Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.<br>
 
 <h2>Demonstration</h2>
+<h3>Ticket Lifecycle Simulation</h3>
+This section will demonstrate the full lifecycle of a ticket, from creation to resolution:<br>
 
+1. Intake: A user (Phoenix) submits a Sev-A ticket regarding an 'Business Critical Outage.'
+2. Assingment: An agent (Scott) observes the ticket and assings it to the 'SysAdmins' department.
+3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.
 
+##Insert screenshots##
