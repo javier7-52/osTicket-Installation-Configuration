@@ -37,4 +37,14 @@ Roles: Created a 'Supreme Admin' role with full permissions.<br>
 Departments: Configured a 'SysAdmins' department to manage technical escalations.<br>
 Teams: Set up an 'Online Banking' team to group agents from different departments for specific tasks.
 
-2. User and Agent Setup
+2. User and Agent Setup<br>
+Agents: Created worker profiles for 'Jean' (SysAdmins) and 'Scott' (Support).<br>
+Users: Simulated customer profiles for 'Phoenix' and 'Cyclops' to test ticket creation.<br>
+
+3. Service Level Agreements (SLA) and Help Topics<br>
+SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.<br>
+Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.<br>
+
+<h2>Demonstration</h2>
+
+
