@@ -65,7 +65,15 @@ https://github.com/user-attachments/assets/f6132dd2-de26-4f80-a08b-89c985e413b2
 <h3>3. Service Level Agreements (SLA) and Help Topics</h3>
 <h4>SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.</h4>
 
+
+https://github.com/user-attachments/assets/a08616c4-59f5-436d-a006-27102bc56a1f
+
+
 <h4>Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.</h4>
+
+
+https://github.com/user-attachments/assets/ea6f0d3d-d734-46ed-aef0-31cd81f99e29
+
 
 <h2>Demonstration</h2>
 <h3>Ticket Lifecycle Simulation</h3>
