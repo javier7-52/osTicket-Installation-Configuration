@@ -30,18 +30,21 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h2>Configuration Steps</h2>
 
-##Insert an image here##
+##Insert an Admin Panel image here##
 
 1. Configure Roles, Departments, and Teams<br>
 Roles: Created a 'Supreme Admin' role with full permissions.<br>
 Departments: Configured a 'SysAdmins' department to manage technical escalations.<br>
 Teams: Set up an 'Online Banking' team to group agents from different departments for specific tasks.
+https://github.com/user-attachments/assets/11eb7afa-1855-4a54-a5df-50bf0186d43f
 
-2. User and Agent Setup<br>
+
+
+3. User and Agent Setup<br>
 Agents: Created worker profiles for 'Jean' (SysAdmins) and 'Scott' (Support).<br>
 Users: Simulated customer profiles for 'Phoenix' and 'Cyclops' to test ticket creation.<br>
 
-3. Service Level Agreements (SLA) and Help Topics<br>
+4. Service Level Agreements (SLA) and Help Topics<br>
 SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.<br>
 Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.<br>
 
@@ -53,4 +56,4 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 2. Assingment: An agent (Scott) observes the ticket and assings it to the 'SysAdmins' department.
 3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.
 
-##Insert screenshots##
+##Insert tickets being created Sscreenshots##
