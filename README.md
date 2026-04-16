@@ -30,30 +30,49 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h2>Configuration Steps</h2>
 
-##Insert an Admin Panel image here##
+<h3>1. Configure Roles, Departments, and Teams</h3>
+<h4>Roles: Created a 'Supreme Admin' role with full permissions.</h4>
 
-1. Configure Roles, Departments, and Teams<br>
-Roles: Created a 'Supreme Admin' role with full permissions.<br>
-Departments: Configured a 'SysAdmins' department to manage technical escalations.<br>
-Teams: Set up an 'Online Banking' team to group agents from different departments for specific tasks.
+
+https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
+
+
+<h4>Departments: Configured a 'SysAdmins' department to manage technical escalations.</h4>
+
+
+https://github.com/user-attachments/assets/f91181a2-683b-49ea-a5c0-86e3fb3565b3
+
+
+<h4>Teams: Set up an 'Online Banking' team to group agents from different departments for specific tasks.</h4>
+
+
 https://github.com/user-attachments/assets/11eb7afa-1855-4a54-a5df-50bf0186d43f
 
 
+<h3>2. User and Agent Setup</h3>
+<h4>Agents: Created worker profiles for 'Jean' (SysAdmins) and 'Scott' (Support).</h4>
 
-3. User and Agent Setup<br>
-Agents: Created worker profiles for 'Jean' (SysAdmins) and 'Scott' (Support).<br>
-Users: Simulated customer profiles for 'Phoenix' and 'Cyclops' to test ticket creation.<br>
 
-4. Service Level Agreements (SLA) and Help Topics<br>
-SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.<br>
-Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.<br>
+https://github.com/user-attachments/assets/201626d7-e3a9-473b-b51b-1951be8e9d73
+
+
+<h4>Users: Simulated customer profiles for 'Jean Grey' and 'Scott Summers' to test ticket creation.</h4>
+
+
+https://github.com/user-attachments/assets/f6132dd2-de26-4f80-a08b-89c985e413b2
+
+
+<h3>3. Service Level Agreements (SLA) and Help Topics</h3>
+<h4>SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.</h4>
+
+<h4>Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.</h4>
 
 <h2>Demonstration</h2>
 <h3>Ticket Lifecycle Simulation</h3>
 This section will demonstrate the full lifecycle of a ticket, from creation to resolution:<br>
 
-1. Intake: A user (Phoenix) submits a Sev-A ticket regarding an 'Business Critical Outage.'
-2. Assingment: An agent (Scott) observes the ticket and assings it to the 'SysAdmins' department.
-3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.
+<h4>1. Intake: A user (Phoenix) submits a Sev-A ticket regarding an 'Business Critical Outage.'</h4>
+<h4>2. Assingment: An agent (Scott) observes the ticket and assings it to the 'SysAdmins' department.</h4>
+<h4>3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
 
-##Insert tickets being created Sscreenshots##
+
