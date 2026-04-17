@@ -94,3 +94,7 @@ https://github.com/user-attachments/assets/7519fdc6-2806-44b4-a463-dfd3a6c67835
 <h4>3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
 
 
+
+https://github.com/user-attachments/assets/714d7c9f-99f2-4090-9ca2-926ebaecb240
+
+
