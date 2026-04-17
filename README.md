@@ -79,8 +79,18 @@ https://github.com/user-attachments/assets/ea6f0d3d-d734-46ed-aef0-31cd81f99e29
 <h3>Ticket Lifecycle Simulation</h3>
 This section will demonstrate the full lifecycle of a ticket, from creation to resolution:<br>
 
-<h4>1. Intake: A user (Phoenix) submits a Sev-A ticket regarding an 'Business Critical Outage.'</h4>
+<h4>1. Intake: A user (Jean) submits a Sev-A ticket regarding an 'Business Critical Outage.'</h4>
+
+
+https://github.com/user-attachments/assets/c3d7fca9-73eb-4ce7-871d-aeaf342691e2
+
+
 <h4>2. Assingment: An agent (Scott) observes the ticket and assings it to the 'SysAdmins' department.</h4>
+
+
+https://github.com/user-attachments/assets/7519fdc6-2806-44b4-a463-dfd3a6c67835
+
+
 <h4>3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
 
 
