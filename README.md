@@ -41,14 +41,14 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h4>Departments: Configured a 'SysAdmins' department to manage technical escalations.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Department Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/f91181a2-683b-49ea-a5c0-86e3fb3565b3
 </details>
 
 <h4>Teams: Set up an 'Online Banking' team to group agents from different departments for specific tasks.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Team Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/11eb7afa-1855-4a54-a5df-50bf0186d43f
 
@@ -57,7 +57,7 @@ Configured IIS to use the PHP manager for handling script execution.
 <h3>2. User and Agent Setup</h3>
 <h4>Agents: Created worker profiles for 'Jean' (SysAdmins) and 'Scott' (Support).</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Worker/Agent Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/201626d7-e3a9-473b-b51b-1951be8e9d73
 
@@ -65,7 +65,7 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h4>Users: Simulated customer profiles for 'Jean Grey' and 'Scott Summers' to test ticket creation.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Client/User Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/f6132dd2-de26-4f80-a08b-89c985e413b2
 
@@ -74,7 +74,7 @@ Configured IIS to use the PHP manager for handling script execution.
 <h3>3. Service Level Agreements (SLA) and Help Topics</h3>
 <h4>SLA Plans: Established Sev-A (1 hour), Sev-B (4 hours), and Sev-C (8 hours) response windows.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: SLA Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/a08616c4-59f5-436d-a006-27102bc56a1f
 
@@ -82,7 +82,7 @@ Configured IIS to use the PHP manager for handling script execution.
 
 <h4>Help Topics: Defined categories like 'Business Critical Outage,' 'Equipment Request,' and 'Password Reset' to streamline ticket routing.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Help Topic Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/ea6f0d3d-d734-46ed-aef0-31cd81f99e29
 
@@ -94,7 +94,7 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 
 <h4>1. Intake: A user (Jean) submits a Sev-A ticket regarding an 'Business Critical Outage.'</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Create Ticket</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/c3d7fca9-73eb-4ce7-871d-aeaf342691e2
 
@@ -102,7 +102,7 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 
 <h4>2. Assignment: An agent (Scott) observes the ticket and assign it to the 'SysAdmins' department.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Ticket Reassignment</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/7519fdc6-2806-44b4-a463-dfd3a6c67835
 
@@ -110,7 +110,7 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 
 <h4>3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
 <details>
-  <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  <summary><b>Watch: Ticket Resolution</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/714d7c9f-99f2-4090-9ca2-926ebaecb240
 
