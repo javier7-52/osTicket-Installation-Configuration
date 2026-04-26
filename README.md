@@ -17,8 +17,11 @@ I built the server, configured the business logic, and then validated the system
 
 <h2>Phase 1: Infrastructure & Enviroment Setup</h2>
 
-1.1 Azure Virtual Network & IP Configuration<br>
-To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP.
+<h3>1.1 Azure Virtual Network & IP Configuration<br></h3>
+To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP. 
+- Task: Assing a static internal IP address
+- Action: Navigated to **Network Settings** > **Network interface / IP configuration** > **ipconfig1** > **Allocation** > Check "Static"
+- Result: VM is not anchored to (`10.0.0.4`), preventing DNS or database connection failures upon system reboots.
 <details>
   <summary><b>Watch: Configuring Static IP in Azure</b> (Click to Expand)</summary>
 
@@ -28,10 +31,24 @@ To ensure the help desk server maintains a consistent address for the database a
 
 </details>
 
-1.2 Web Server (IIS) & PHP Installation<br>
-Configured IIS to use the PHP manager for handling script execution. 
+<h3>1.2 Web Server (IIS) Implementation<br></h3>
+I prepared the Windows enviroment to host a web application by enabling **Internet Information Services** (ISS) and the necessary gateway modules.
+- Task: Install and configure the web server role.
+- Action: Launched the **Turn Windows features on or off** wizard; Open _Control Panel > Programs_. Enabled **Internet Information Services** and specifically selected **CGI** under _World Wide Web Services > Application Development Features_.
+- Why: CGI (Common Gateway Interface) is required to allow the IIS web server to process the PHP scripts that power osTicket.
+<details>
+  <summary><b>Watch: Enabling IIS and CGI Components</b> (Click to Expand)</summary>
+  
 
-1.3 osTicket Deployment: Downloaded and extracted latest [osTicket](https://osticket.com/download/) files into the web root (`c:\inetpub\wwwroot`)
+https://github.com/user-attachments/assets/0979f044-db9b-4ecc-bd43-917c973d3f0d
+
+
+</details>
+
+<h3>1.3 PHP Environment & Scripting Support</h3>
+To allow the Windows server to execute the osTicket source code, I installed the necessary PHP binaries and management tools from the project's installation media.
+- Task: Register the PHP engine with the IIS Web Server.
+- Action 1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
 
 1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
 
