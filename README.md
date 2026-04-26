@@ -2,8 +2,8 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket Installation and Configuration</h1>
-A start-to-finish outline of a popular open-source help desk ticketing system.
+<h1>End-to-End IT Service Management (ITSM) Implementation: osTicket on Azure</h1>
+I built the server, configured the business logic, and then validated the system with a live simulation.
 
 <h2>Enviroments, Languages, and Technologies Used</h2>
 
@@ -15,18 +15,25 @@ A start-to-finish outline of a popular open-source help desk ticketing system.
 - [HeidiSQL](https://www.heidisql.com/): Database Client
 - [osTicket](https://osticket.com/): Ticketing Software
 
-<h2>Installation Steps</h2>
+<h2>Phase 1: Infrastructure & Enviroment Setup</h2>
 
-1. Server Preparation: Create an Azure VM and enable IIS with CGI support.<br>
-Inside the VM, opened Control Panel -> Programs -> Turn Windows features on or off (on the left) <br>
-Followed: Internet Information Services -> World Wide Web Services -> Application Development Features -> CGI and check it  (Check each box before expanding each folder)
+1.1 Azure Virtual Network & IP Configuration<br>
+To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP.
+<details>
+  <summary><b>Watch: Configuring Static IP in Azure</b> (Click to Expand)</summary>
 
-2. PHP & Database Setup: Installed PHP 8.5.5 and MySQL 5.5.62.<br>
+
+  https://github.com/user-attachments/assets/43547d92-4cde-4ccc-97d7-2528f33ed6e3
+
+
+</details>
+
+1.2 Web Server (IIS) & PHP Installation<br>
 Configured IIS to use the PHP manager for handling script execution. 
 
-3. osTicket Deployment: Downloaded and extracted latest [osTicket](https://osticket.com/download/) files into the web root (`c:\inetpub\wwwroot`)
+1.3 osTicket Deployment: Downloaded and extracted latest [osTicket](https://osticket.com/download/) files into the web root (`c:\inetpub\wwwroot`)
 
-4. Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
+1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
 
 <h2>Configuration Steps</h2>
 
@@ -92,7 +99,7 @@ Configured IIS to use the PHP manager for handling script execution.
 <h3>Ticket Lifecycle Simulation</h3>
 This section will demonstrate the full lifecycle of a ticket, from creation to resolution:<br>
 
-<h4>1. Intake: A user (Jean) submits a Sev-A ticket regarding an 'Business Critical Outage.'</h4>
+<h4>1. Intake: A user (Jean) submits a ticket regarding "Business Critical Outage" (Help Topic).</h4>
 <details>
   <summary><b>Watch: Create Ticket</b> (Click to Expand)</summary>
 
@@ -100,7 +107,7 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 
 </details>
 
-<h4>2. Assignment: An agent (Scott) observes the ticket and assign it to the 'SysAdmins' department.</h4>
+<h4>2. Assignment: An agent (Scott) observes the ticket, sets it to "Emergency," and assigns it to the "SysAdmins" department.</h4>
 <details>
   <summary><b>Watch: Ticket Reassignment</b> (Click to Expand)</summary>
 
@@ -108,7 +115,15 @@ This section will demonstrate the full lifecycle of a ticket, from creation to r
 
 </details>
 
-<h4>3. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
+<h4>3. SLA Trigger: Because it is "Emergency," the Sev-A (1 hour) SLA is applied.</h4>
+<details>
+  <summary><b>Watch: SLA Trigger</b> (Click to Expand)</summary>
+
+  https://github.com/user-attachments/assets/714d7c9f-99f2-4090-9ca2-926ebaecb240
+
+</details>
+
+<h4>4. Resolution: Agent 'Jean' updates the ticket, provides a resolution, and closes the request.</h4>
 <details>
   <summary><b>Watch: Ticket Resolution</b> (Click to Expand)</summary>
 
