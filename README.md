@@ -55,10 +55,36 @@ To allow the Windows server to execute the osTicket source code, I installed the
 
 - Task: Register the PHP engine with the IIS Web Server.
 - Action:
-  1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
-  2. Extracted the **PHP 7.3.8** binaries to `C:\PHP`.
-  3. Extracted the **PHP Manager for IIS** (`PHPManagerForIIS_V1.5.0`) to register the `php-cgi.exe` handler.
-  4. Installed the **URL Rewrite Module** (`rewrite_amd64_en-US.msi`) to ensure osTicket can handle clean permalinks and routing.
+1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
+    <details>
+     <summary><b>Watch</b> (Click to Expand)</summary>
+  
+      https://github.com/user-attachments/assets/3d442865-0329-44d6-aa26-31c1c927dd2a
+    </details>
+  2. Create a directory `C:\PHP`.
+    <details>
+      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  
+      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
+    </details> 
+  3. Extracted the **PHP 7.3.8** binaries to `C:\PHP`.
+    <details>
+      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  
+      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
+    </details>
+  4. Extracted the **PHP Manager for IIS** (`PHPManagerForIIS_V1.5.0`) to register the `php-cgi.exe` handler.
+    <details>
+      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  
+      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
+    </details>
+  5. Installed the **URL Rewrite Module** (`rewrite_amd64_en-US.msi`) to ensure osTicket can handle clean permalinks and routing.
+  <details>
+    <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+  
+      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
+  </details>
 - Technical Detail: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
 
 1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
@@ -71,7 +97,6 @@ To allow the Windows server to execute the osTicket source code, I installed the
   <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
 
   https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
-
 </details>
 
 <h4>Departments: Configured a 'SysAdmins' department to manage technical escalations.</h4>
