@@ -19,10 +19,13 @@ I built the server, configured the business logic, and then validated the system
 
 <h3>1.1 Azure Virtual Network & IP Configuration<br></h3>
 To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP. 
+
 - Task: Assing a static internal IP address
 - Action: Navigated to **Network Settings** > **Network interface / IP configuration** > **ipconfig1** > **Allocation** > Check "Static"
-- Result: VM is not anchored to (`10.0.0.4`), preventing DNS or database connection failures upon system reboots.
+- Result: VM is now anchored to (`10.0.0.4`), preventing DNS or database connection failures upon system reboots.
+
 <details>
+  
   <summary><b>Watch: Configuring Static IP in Azure</b> (Click to Expand)</summary>
 
 
@@ -33,9 +36,11 @@ To ensure the help desk server maintains a consistent address for the database a
 
 <h3>1.2 Web Server (IIS) Implementation<br></h3>
 I prepared the Windows enviroment to host a web application by enabling **Internet Information Services** (ISS) and the necessary gateway modules.
+
 - Task: Install and configure the web server role.
 - Action: Launched the **Turn Windows features on or off** wizard; Open _Control Panel > Programs_. Enabled **Internet Information Services** and specifically selected **CGI** under _World Wide Web Services > Application Development Features_.
 - Why: CGI (Common Gateway Interface) is required to allow the IIS web server to process the PHP scripts that power osTicket.
+  
 <details>
   <summary><b>Watch: Enabling IIS and CGI Components</b> (Click to Expand)</summary>
   
@@ -47,8 +52,14 @@ https://github.com/user-attachments/assets/0979f044-db9b-4ecc-bd43-917c973d3f0d
 
 <h3>1.3 PHP Environment & Scripting Support</h3>
 To allow the Windows server to execute the osTicket source code, I installed the necessary PHP binaries and management tools from the project's installation media.
+
 - Task: Register the PHP engine with the IIS Web Server.
-- Action 1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
+- Action:
+  1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
+  2. Extracted the **PHP 7.3.8** binaries to `C:\PHP`.
+  3. Extracted the **PHP Manager for IIS** (`PHPManagerForIIS_V1.5.0`) to register the `php-cgi.exe` handler.
+  4. Installed the **URL Rewrite Module** (`rewrite_amd64_en-US.msi`) to ensure osTicket can handle clean permalinks and routing.
+- Technical Detail: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
 
 1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
 
