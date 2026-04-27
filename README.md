@@ -57,34 +57,34 @@ To allow the Windows server to execute the osTicket source code, I installed the
 - Action:
 1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
     <details>
-     <summary><b>Watch</b> (Click to Expand)</summary>
+     <summary><b>Watch: VC Redist Installaion</b> (Click to Expand)</summary>
   
       https://github.com/user-attachments/assets/3d442865-0329-44d6-aa26-31c1c927dd2a
-    </details>
-  2. Create a directory `C:\PHP`.
-    <details>
-      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
+      </details>
+  2. Create a directory `C:\PHP` to give a dedicated home for the PHP 7.3.8 binaries.
+      <details>
+        <summary><b>Watch: Directory Creation</b> (Click to Expand)</summary>
   
-      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
-    </details> 
+        https://github.com/user-attachments/assets/87c4fec4-3084-464d-857d-0ffaf20f95ba
+        </details> 
   3. Extracted the **PHP 7.3.8** binaries to `C:\PHP`.
-    <details>
-      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
-  
-      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
-    </details>
-  4. Extracted the **PHP Manager for IIS** (`PHPManagerForIIS_V1.5.0`) to register the `php-cgi.exe` handler.
-    <details>
-      <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
-  
-      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
-    </details>
+      <details>
+        <summary><b>Watch: PHP Extraction</b> (Click to Expand)</summary>
+        
+        https://github.com/user-attachments/assets/92ea751e-159a-4882-b33b-11dd9243da48
+        </details>
+  4. Installed the **PHP Manager for IIS** (`PHPManagerForIIS_V1.5.0`) to register the `php-cgi.exe` handler.
+      <details>
+        <summary><b>Watch: PHP Manager Installation</b> (Click to Expand)</summary>
+          
+        https://github.com/user-attachments/assets/ba16f1e8-2a6f-45e0-a3cc-8d4e59ffd526
+        </details>
   5. Installed the **URL Rewrite Module** (`rewrite_amd64_en-US.msi`) to ensure osTicket can handle clean permalinks and routing.
-  <details>
-    <summary><b>Watch: Role Configuration</b> (Click to Expand)</summary>
-  
-      https://github.com/user-attachments/assets/373bd3b4-3c95-4491-ac29-ab0f696fdeea
-  </details>
+      <details>
+        <summary><b>Watch: Rewrite Module Installation</b> (Click to Expand)</summary>
+        
+        https://github.com/user-attachments/assets/7c666d38-2cce-4d24-a330-0084ebe73e65
+        </details>
 - Technical Detail: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
 
 1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
