@@ -91,10 +91,35 @@ To allow the Windows server to execute the osTicket source code, I installed the
           
   <img width="1718" height="951" alt="PHP Confirmation" src="https://github.com/user-attachments/assets/b98fb5e0-3b71-44f8-afb1-962e6a3d2930">
    </details>
-_Before confirming I had to register PHP from within IIS: PHP Manager > C:\PHP\php-cgi.exe_
+    *Note: Before confirming, I registered the PHP engine within IIS via PHP Manager > `C:\PHP\php-cgi.exe`*
 
-1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
+<h3>1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.</h3>
+Before the osTicket browser-based installer could run, I had to provision a relational database backend and initialize a schema to store the help desk data.
 
+- Task: Provision a MySQL database and initialize the application container.
+- Action:
+1. Installed the **MySQL 5.5.62** database engine useing the `mysql-5.5.62-win32` installer.
+    <details>
+      <summary><b>Watch: MySQL Database Installation</b> (Click to Expand)</summary>
+
+      https://github.com/user-attachments/assets/2dd764cd-86f6-4d0a-8415-1b534757c360
+      </details>
+        *Note: The **username** and **password** were both "root" for simplicity.
+
+   2. Utilized **HeidiSQL** (`HeidiSQL_12.3.0.6589_Setup`) to connect to the local MySQL instance (127.0.0.1) using the root credentials established during installation.
+      <details>
+        <summary><b>Watch: HeidiSQL Utilization</b> (Click to Expand)</summary>
+  
+        https://github.com/user-attachments/assets/d4a4207d-0a3b-4655-9d87-30090dbc74ab
+        </details>
+
+   3. Executed the command to create a new database named `osTicket`.
+      <details>
+        <summary><b>Watch: Database Creation</b> (Click to Expand)</summary>
+  
+        https://github.com/user-attachments/assets/e91ba77f-c7bb-4b7c-9dfa-6c218a21460e
+        </details>
+      
 <h2>Configuration Steps</h2>
 
 <h3>1. Configure Roles, Departments, and Teams</h3>
