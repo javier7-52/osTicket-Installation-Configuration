@@ -86,6 +86,12 @@ To allow the Windows server to execute the osTicket source code, I installed the
         https://github.com/user-attachments/assets/7c666d38-2cce-4d24-a330-0084ebe73e65
         </details>
 - Technical Detail: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
+  <details>
+  <summary><b>View: PHP Install Confirmation</b> (Click to Expand)</summary>
+          
+  <img width="1718" height="951" alt="PHP Confirmation" src="https://github.com/user-attachments/assets/b98fb5e0-3b71-44f8-afb1-962e6a3d2930">
+   </details>
+_Before confirming I had to register PHP from within IIS: PHP Manager > C:\PHP\php-cgi.exe_
 
 1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.
 
