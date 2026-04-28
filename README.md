@@ -18,11 +18,11 @@ I built the server, configured the business logic, and then validated the system
 <h2>Phase 1: Infrastructure & Enviroment Setup</h2>
 
 <h3>1.1 Azure Virtual Network & IP Configuration<br></h3>
-To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP. 
+To ensure the help desk server maintains a consistent address for the database and web traffic, I configured a static private IP to prevent database connection string breaks. 
 
-- Task: Assing a static internal IP address
-- Action: Navigated to **Network Settings** > **Network interface / IP configuration** > **ipconfig1** > **Allocation** > Check "Static"
-- Result: VM is now anchored to (`10.0.0.4`), preventing DNS or database connection failures upon system reboots.
+- **Task**: Assing a static internal IP address
+- **Action**: Navigated to **Network Settings** > **Network interface / IP configuration** > **ipconfig1** > **Allocation** > Check "Static"
+- **Result**: VM is now anchored to (`10.0.0.4`), preventing DNS or database connection failures upon system reboots.
 
 <details>
   
@@ -37,9 +37,9 @@ To ensure the help desk server maintains a consistent address for the database a
 <h3>1.2 Web Server (IIS) Implementation<br></h3>
 I prepared the Windows enviroment to host a web application by enabling **Internet Information Services** (ISS) and the necessary gateway modules.
 
-- Task: Install and configure the web server role.
-- Action: Launched the **Turn Windows features on or off** wizard; Open _Control Panel > Programs_. Enabled **Internet Information Services** and specifically selected **CGI** under _World Wide Web Services > Application Development Features_.
-- Why: CGI (Common Gateway Interface) is required to allow the IIS web server to process the PHP scripts that power osTicket.
+- **Task**: Install and configure the web server role.
+- **Action**: Launched the **Turn Windows features on or off** wizard; Open _Control Panel > Programs_. Enabled **Internet Information Services** and specifically selected **CGI** under _World Wide Web Services > Application Development Features_.
+- **Why**: CGI (Common Gateway Interface) is required to allow the IIS web server to process the PHP scripts that power osTicket.
   
 <details>
   <summary><b>Watch: Enabling IIS and CGI Components</b> (Click to Expand)</summary>
@@ -53,8 +53,8 @@ https://github.com/user-attachments/assets/0979f044-db9b-4ecc-bd43-917c973d3f0d
 <h3>1.3 PHP Environment & Scripting Support</h3>
 To allow the Windows server to execute the osTicket source code, I installed the necessary PHP binaries and management tools from the project's installation media.
 
-- Task: Register the PHP engine with the IIS Web Server.
-- Action:
+- **Task**: Register the PHP engine with the IIS Web Server.
+- **Action**:
 1. Installed the Visual C++ Redistributable (`VC_redist.x86.exe`) to provide the necessary runtime libraries.
     <details>
      <summary><b>Watch: VC Redist Installaion</b> (Click to Expand)</summary>
@@ -85,7 +85,7 @@ To allow the Windows server to execute the osTicket source code, I installed the
         
         https://github.com/user-attachments/assets/7c666d38-2cce-4d24-a330-0084ebe73e65
         </details>
-- Technical Detail: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
+- **Technical Detail**: Confirmed the installation by checking the "PHP Info" page within the IIS console to verify the version and active extensions.
   <details>
   <summary><b>View: PHP Install Confirmation</b> (Click to Expand)</summary>
           
@@ -96,8 +96,8 @@ To allow the Windows server to execute the osTicket source code, I installed the
 <h3>1.4 Database Configuration: Used HeidiSQL to create a dedicated 'osTicket' database and connected the application during the browser-based setup.</h3>
 Before the osTicket browser-based installer could run, I had to provision a relational database backend and initialize a schema to store the help desk data.
 
-- Task: Provision a MySQL database and initialize the application container.
-- Action:
+- **Task**: Provision a MySQL database and initialize the application container.
+- **Action**:
 1. Installed the **MySQL 5.5.62** database engine useing the `mysql-5.5.62-win32` installer.
     <details>
       <summary><b>Watch: MySQL Database Installation</b> (Click to Expand)</summary>
@@ -123,18 +123,38 @@ Before the osTicket browser-based installer could run, I had to provision a rela
 <h3>1.5 osTicket Installation & Extension Configuration</h3>
 With the environment staged, I deployed the application source files and configured the necessary PHP extensions and file-level permissions to initialize the setup wizard.
 
-- Task: Deploy application files and resolve enviromental dependencies.
-- Action:
-1. Extracted `osTicket-v1.15.8.zip` and migrated the `upload` directory to the web root (`C:\inetpub\wwwroot\osTickt`), then renamed `upload` to `osTicket`.
-3. Restarted the **IIS Server** to ensure all configuration changes were active.        
-4. Utilized **PHP Manager** to enable critical extensions required by the application: `php_imap.dll`, `php_intl.dll`, `php_opcache.dll`.
+- **Task**: Deploy application files and resolve enviromental dependencies.
+- **Action**:
+1. Extracted `osTicket-v1.15.8.zip` and migrated the `upload` directory to the web root (`C:\inetpub\wwwroot\osTicket`), then renamed `upload` to `osTicket`.
+2. Restarted the **IIS Server** to ensure all configuration changes were active.        
+3. Utilized **PHP Manager** to enable critical extensions required by the application: `php_imap.dll`, `php_intl.dll`, `php_opcache.dll`.
    <details>
       <summary><b>Watch: Enabling PHP Extensions</b> (Click to Expand)</summary>
 
       https://github.com/user-attachments/assets/7d59d51c-e7b0-48f6-a8a9-2d1d895e821e
       </details>
 
-<h2>Configuration Steps</h2>
+- **Task**: Configure the application's configuration file and manage security permissions.
+- **Action**:
+1. Renamed `ost-sampleconfig.php` to `ost-config.php` within the `include` directory.
+   <details>
+      <summary><b>Watch: How to find **ost-sampleconfig.php**</b> (Click to Expand)</summary>
+
+      https://github.com/user-attachments/assets/6d7c3533-d5b3-4de0-bd97-2e5e1fb8ba2a
+      </details>
+
+2. Permissions Hardening: Modified the Access Control List (ACL) for `ost-config.php` by disabling inheritance and granting **Full Control** to 'Everyone' to allow the installer to write settings.
+   <details>
+      <summary><b>Watch: Permission Hardening</b> (Click to Expand)</summary>
+
+      https://github.com/user-attachments/assets/0caa47a7-6f10-4452-9e40-b4e9ad04b3ac
+      </details>
+        *Note: I used 'Everyone' for the sake of this project, but it is not recommended in real life application.
+
+- **Result**: The osTicket setup wizard is now fully accessible at `http://localhost/osTicket` with all prerequisite checks cleared.
+
+<h2>Phase 3: Configuration Steps</h2>
+The Core Logic: I configured the system so that **Help Topics** act as the primary routing engine. By selecting a Help Topic, the system automatically assings the correct **Priority**, **Department**, and **SLA Plan**, ensuring that "Business Critical Outage" tickets are prioritized over "General Inquiries."
 
 <h3>1. Configure Roles, Departments, and Teams</h3>
 <h4>Roles: Created a 'Supreme Admin' role with full permissions.</h4>
@@ -193,7 +213,7 @@ With the environment staged, I deployed the application source files and configu
 
 </details>
 
-<h2>Demonstration</h2>
+<h2>Phase 4: Demonstration</h2>
 <h3>Ticket Lifecycle Simulation</h3>
 This section will demonstrate the full lifecycle of a ticket, from creation to resolution:<br>
 
