@@ -106,20 +106,34 @@ Before the osTicket browser-based installer could run, I had to provision a rela
       </details>
         *Note: The **username** and **password** were both "root" for simplicity.
 
-   2. Utilized **HeidiSQL** (`HeidiSQL_12.3.0.6589_Setup`) to connect to the local MySQL instance (127.0.0.1) using the root credentials established during installation.
-      <details>
-        <summary><b>Watch: HeidiSQL Utilization</b> (Click to Expand)</summary>
-  
-        https://github.com/user-attachments/assets/d4a4207d-0a3b-4655-9d87-30090dbc74ab
-        </details>
+ 2. Utilized **HeidiSQL** (`HeidiSQL_12.3.0.6589_Setup`) to connect to the local MySQL instance (127.0.0.1) using the root credentials established during installation.
+    <details>
+      <summary><b>Watch: HeidiSQL Utilization</b> (Click to Expand)</summary>
 
-   3. Executed the command to create a new database named `osTicket`.
-      <details>
-        <summary><b>Watch: Database Creation</b> (Click to Expand)</summary>
-  
-        https://github.com/user-attachments/assets/e91ba77f-c7bb-4b7c-9dfa-6c218a21460e
-        </details>
-      
+      https://github.com/user-attachments/assets/d4a4207d-0a3b-4655-9d87-30090dbc74ab
+      </details>
+
+ 3. Executed the command to create a new database named `osTicket`.
+    <details>
+      <summary><b>Watch: Database Creation</b> (Click to Expand)</summary>
+
+      https://github.com/user-attachments/assets/e91ba77f-c7bb-4b7c-9dfa-6c218a21460e
+      </details>
+
+<h3>1.5 osTicket Installation & Extension Configuration</h3>
+With the environment staged, I deployed the application source files and configured the necessary PHP extensions and file-level permissions to initialize the setup wizard.
+
+- Task: Deploy application files and resolve enviromental dependencies.
+- Action:
+1. Extracted `osTicket-v1.15.8.zip` and migrated the `upload` directory to the web root (`C:\inetpub\wwwroot\osTickt`), then renamed `upload` to `osTicket`.
+3. Restarted the **IIS Server** to ensure all configuration changes were active.        
+4. Utilized **PHP Manager** to enable critical extensions required by the application: `php_imap.dll`, `php_intl.dll`, `php_opcache.dll`.
+   <details>
+      <summary><b>Watch: Enabling PHP Extensions</b> (Click to Expand)</summary>
+
+      https://github.com/user-attachments/assets/7d59d51c-e7b0-48f6-a8a9-2d1d895e821e
+      </details>
+
 <h2>Configuration Steps</h2>
 
 <h3>1. Configure Roles, Departments, and Teams</h3>
